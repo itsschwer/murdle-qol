@@ -2,7 +2,10 @@
 document.addEventListener("click", blur);
 function blur(e) {
     const back = document.querySelector("input.opening-button");
-    if (back?.attributes?.getNamedItem("onclick")?.value == "research('return')" && !e.target.closest(".card-skeu")) {
+    if (back?.attributes?.getNamedItem("onclick")?.value == "research('return')"
+        && !e.target.classList.contains("grid_emoji")
+        && !e.target.closest(".card-skeu")) {
+        // console.log(e.target);
         back.click();
     }
 }
