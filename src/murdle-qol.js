@@ -1,3 +1,13 @@
+// Clicking off card returns to main
+document.addEventListener("click", blur);
+function blur(e) {
+    const back = document.querySelector("input.opening-button");
+    if (back?.attributes?.getNamedItem("onclick")?.value == "research('return')" && !e.target.closest(".card-skeu")) {
+        back.click();
+    }
+}
+
+// Mouse-optimised grid controls
 // Original function found by recording network activity:
 // https://murdle.com/update-virgo/main.js?_=1676526474286
 function clickBox(e) {
@@ -40,16 +50,6 @@ document.addEventListener("contextmenu", clickBox, true);
 // https://stackoverflow.com/questions/1930875/disabling-middle-click-scrolling-with-javascript/30423534#30423534
 document.addEventListener("mousedown", mw, true);
 function mw(e) { if (e.button == 1) clickBox(e); }
-
-
-// Clicking off card returns to main
-document.addEventListener("click", blur);
-function blur(e) {
-    const back = document.querySelector("input.opening-button");
-    if (back?.attributes?.getNamedItem("onclick")?.value == "research('return')" && !e.target.closest(".card-skeu")) {
-        back.click();
-    }
-}
 
 
 // Hacky -----------------------------------------------------------------------
