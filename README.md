@@ -10,7 +10,7 @@ A small Chrome extension that applies some quality-of-life changes to [murdle.co
     - Middle mouse button sets ✅
     - *Faster than cycling through the options*
 - Clue cards can be set down by clicking on white space / negative space
-    - *For convenience and to lessen mouse movement*
+    - *For convenience and lessening mouse movement*
 - Grid emojis are lit up by default
     - *The built-in light switch still works, just inverted*
 
@@ -22,7 +22,7 @@ A small Chrome extension that applies some quality-of-life changes to [murdle.co
     - or *`chrome://extensions`*
 3. Toggle on *Developer mode*  (top-right)
 4. Click *Load unpacked*
-5. In the file selector, navigate to and select the unzipped download from step 1.
+5. In the file selector, navigate to and select the `src` folder from the unzipped download from step 1.
 6. *(Optional)* Click on *Details* for the newly added extension:
     - Toggle on *Allow in Incognito* (if playing in Incognito mode)
     - Toggle off *Allow access to file URLs* (access not needed)
