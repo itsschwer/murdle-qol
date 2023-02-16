@@ -13,7 +13,7 @@
         {
             "matches": ["*://murdle.com/"],
             "js": ["murdle-qol.js"],
-            "css": ["grid_emoji.css"]
+            "css": ["grid_emoji.css", "hide.css"]
         }
     ]
 }
