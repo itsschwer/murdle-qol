@@ -45,8 +45,8 @@ function mw(e) { if (e.button == 1) clickBox(e); }
 // Clicking off card returns to main
 document.addEventListener("click", blur, true);
 function blur(e) {
-    const back = document.querySelector("#mainbox > p > input");
-    if (back && !e.target.closest(".card-skeu")) {
+    const back = document.querySelector("input.opening-button");
+    if (back?.attributes?.getNamedItem("onclick")?.value == "research('return')" && !e.target.closest(".card-skeu")) {
         back.click();
     }
 }
