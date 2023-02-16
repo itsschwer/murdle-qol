@@ -1,3 +1,10 @@
-.grid_emoji {
-    color: inherit !important;
+/* selectors include `div` to have higher specificity
+   in order to override the default css. */
+
+div .reveal_emoji {
+    color: transparent !important;
+}
+
+div .black_emoji {
+    color: inherit;
 }
