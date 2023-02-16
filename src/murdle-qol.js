@@ -43,10 +43,36 @@ function mw(e) { if (e.button == 1) clickBox(e); }
 
 
 // Clicking off card returns to main
-document.addEventListener("click", blur, true);
+document.addEventListener("click", blur);
 function blur(e) {
     const back = document.querySelector("input.opening-button");
     if (back?.attributes?.getNamedItem("onclick")?.value == "research('return')" && !e.target.closest(".card-skeu")) {
         back.click();
+    }
+}
+
+
+// Hacky -----------------------------------------------------------------------
+// Game seems to only read from local storage once an accusation has been made,
+// so need to somehow set the page variable `grid_backup` somehow.
+// This is necessary because opening the notebook or a fingerprint clue repopulates the grid.
+// Can't click on lightbulb because it is an <a> with a href attribute (csp)
+//     (lightSwitch() → updateGrid() → grid_backup)
+
+// Add a hacky element so that we can call updateGrid() 
+const hacky = document.createElement("div");
+hacky.id = "hacky-qol";
+hacky.style.display = "none";
+document.body.append(hacky);
+const pos = hacky.outerHTML.split('><')[0].length;
+hacky.outerHTML = hacky.outerHTML.slice(0, pos) + ' onclick="updateGrid()"' + hacky.outerHTML.slice(pos);
+
+// Need to use mousedown ∵ otherwise newPage() is called first and grid data is lost
+document.addEventListener("mousedown", newPage);
+function newPage(e) {
+    if (e.target.attributes?.getNamedItem("onclick")?.value.includes("newPage(")) {
+        const c = document.getElementById("hacky-qol");
+        c.click();
+        // console.log(c);
     }
 }
