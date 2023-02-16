@@ -37,6 +37,8 @@ function clickBox(e) {
 
 document.addEventListener("click", clickBox, true);
 document.addEventListener("contextmenu", clickBox, true);
-// document.addEventListener("auxclick", clickBox, true);   // also triggers on rmb, not working for mw
+// https://stackoverflow.com/questions/1930875/disabling-middle-click-scrolling-with-javascript/30423534#30423534
+document.addEventListener("mousedown", mw, true);
+function mw(e) { if (e.button == 1) clickBox(e); }
 
 // todo: Clicking off card returns to main
