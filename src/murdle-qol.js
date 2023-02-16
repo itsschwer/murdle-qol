@@ -64,8 +64,7 @@ const hacky = document.createElement("div");
 hacky.id = "hacky-qol";
 hacky.style.display = "none";
 document.body.append(hacky);
-const pos = hacky.outerHTML.split('><')[0].length;
-hacky.outerHTML = hacky.outerHTML.slice(0, pos) + ' onclick="updateGrid()"' + hacky.outerHTML.slice(pos);
+hacky.outerHTML = hacky.outerHTML.replace('>', ' onclick="updateGrid()">');
 
 // Need to use mousedown ∵ otherwise newPage() is called first and grid data is lost
 document.addEventListener("mousedown", newPage);
