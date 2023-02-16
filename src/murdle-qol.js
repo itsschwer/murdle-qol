@@ -41,4 +41,12 @@ document.addEventListener("contextmenu", clickBox, true);
 document.addEventListener("mousedown", mw, true);
 function mw(e) { if (e.button == 1) clickBox(e); }
 
-// todo: Clicking off card returns to main
+
+// Clicking off card returns to main
+document.addEventListener("click", blur, true);
+function blur(e) {
+    const back = document.querySelector("#mainbox > p > input");
+    if (back && !e.target.closest(".card-skeu")) {
+        back.click();
+    }
+}
