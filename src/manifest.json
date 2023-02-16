@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "version": "1.0.2",
     "name": "murdle-qol",
-    "description": "Adjusts the Murdle note grid behaviour for ease of use.",
+    "description": "Apply some quality-of-life changes to murdle.com",
     "action": {
         "default_title": "Open murdle.com"
     },
