@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "version": "0.0.0",
+    "name": "murdle-qol",
+    "description": "Adjusts the Murdle note grid behaviour for ease of use.",
+    "action": {
+        "default_title": "Open murdle.com"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://murdle.com/"],
+            "js": ["murdle-qol.js"],
+            "css": ["grid_emoji.css"]
+        }
+    ]
+}
