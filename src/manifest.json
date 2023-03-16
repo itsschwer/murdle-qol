@@ -11,7 +11,7 @@
     },
     "content_scripts": [
         {
-            "matches": ["*://murdle.com/"],
+            "matches": ["*://murdle.com/*"],
             "js": ["murdle-qol.js"],
             "css": ["grid_emoji.css", "hide.css"]
         }
