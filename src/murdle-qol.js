@@ -14,8 +14,10 @@ function blur(e) {
 // Mouse-optimised grid controls
 // Original function found by recording network activity:
 // https://murdle.com/update-virgo/main.js?_=1676526474286
+// https://murdle.com/update-pisces/main.js?_=1678948892664 [15/03/23?]
 function clickBox(e) {
-    if (e.target.attributes?.getNamedItem("onclick")?.value != "clickBox(this)") return;
+    if (e.target.attributes?.getNamedItem("onclick")?.value != "clickBox(this)"
+        && e.target.parentElement.attributes.getNamedItem("onclick")?.value != "clickBox(this)") return;
 
     let icon = "&nbsp;";
     switch (e.button) {
@@ -38,11 +40,13 @@ function clickBox(e) {
     // console.log(icon);
     // console.log(e);
 
-    if (e.target.innerHTML == icon) {
-        e.target.innerHTML = "&nbsp;";
+    const cell = e.target.querySelector('.xando') || e.target;
+
+    if (cell.innerHTML == icon) {
+        cell.innerHTML = "&nbsp;";
     }
     else {
-        e.target.innerHTML = icon;
+        cell.innerHTML = icon;
     }
 
     let grid_backup = document.getElementById("grid_backup").innerHTML;
