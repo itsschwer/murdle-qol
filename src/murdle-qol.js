@@ -1,6 +1,7 @@
 // Clicking off card returns to main
 document.addEventListener("click", blur);
 function blur(e) {
+    // Doesn't work with the new 'next card' button?
     const back = document.querySelector("input.opening-button");
     if (back?.attributes?.getNamedItem("onclick")?.value == "research('return')"
         && !e.target.classList.contains("grid_emoji")
