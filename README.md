@@ -5,9 +5,9 @@ A small Chrome extension that applies some quality-of-life changes to [murdle.co
 
 ## Features
 - Grid controls optimised for mouse
-    - Left mouse button sets ❌
+    - Left mouse button sets ✅
     - Right mouse button sets ❓
-    - Middle mouse button sets ✅
+    - Middle mouse button sets ❌
     - *Faster than cycling through the options*
 - Clue cards can be set down by clicking on white space / negative space
     - *For convenience and lessening mouse movement*
