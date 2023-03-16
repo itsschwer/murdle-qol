@@ -20,13 +20,13 @@ function clickBox(e) {
     let icon = "&nbsp;";
     switch (e.button) {
         case 0: // lmb
-            icon = "❌";
+            icon = "✅";
             break;
         case 1: // mw
             icon = "❓";
             break;
         case 2: // rmb
-            icon = "✅";
+            icon = "❌";
             break;
         default:
             return;
